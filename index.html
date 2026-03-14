@@ -511,8 +511,7 @@
     </div>
 
     <div class="plan-note reveal">
-      Прошу каждого придумать, чем занять всех на 5–10 минут.<br>
-      Формат лёгкий, простой.
+      Прошу каждого придумать, чем занять всех на 5–10 минут. Формат лёгкий, простой.
     </div>
     <div class="plan-footer reveal">
       <p>Иначе, мы позовём Тамаду 😂</p>
@@ -530,7 +529,7 @@
       Адмиральская улица, вл1, с1
     </p>
     <div class="reveal">
-      <a href="https://yandex.com/maps/-/CPB~iSk8">
+      <a href="https://yandex.com/maps/-/CPB~iSk8 target="_blank" rel="noopener" class="btn-outline">
         ↗ Открыть в Яндекс Картах
       </a>
       <button class="btn-outline" onclick="addToCalendar()">
@@ -538,7 +537,7 @@
       </button>
     </div>
   </div>
-</section>
+</section>м
 
  <!-- FINALE -->
         <section id="finale">
@@ -578,6 +577,45 @@
                 slides[current].classList.add('active');
             }
             , 2000);
+          /* секция финала */
+#finale {
+  padding: 120px 24px 160px;
+  background: #f3f3f3;
+  text-align: center;
+}
+
+/* основной текст */
+.finale-text {
+  margin: 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(34px, 6vw, 54px);
+  line-height: 1.35;
+  color: #2f2f2f;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* имена */
+.finale-names {
+  margin-top: 36px;
+  font-family: "Cormorant Garamond", serif;
+  font-style: italic;
+  font-size: 26px;
+  color: #8c8c8c;
+}
+
+/* нижняя плашка с датой */
+.footer-date {
+  background: #e9e6e3;
+  padding: 28px 20px;
+  text-align: center;
+  font-family: "DM Sans", sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: #b7b1ac;
+}
 
   // ── Scroll reveal ──
   const observer = new IntersectionObserver(entries => {
