@@ -104,7 +104,7 @@
 
     .hero-body {
       font-family: var(--sans);
-      font-weight: 300;
+      font-weight: 400;
       font-size: clamp(.88rem, 2.4vw, 1.02rem);
       line-height: 1.85;
       opacity: .86;
@@ -319,7 +319,7 @@
       padding-top: 1rem;
     }
 
-    .plan-footer p {
+    .plan- p {
       font-family: var(--serif);
       font-style: italic;
       font-size: clamp(1.2rem, 4vw, 1.65rem);
@@ -446,7 +446,6 @@
       Мы хотим пригласить вас на небольшое<br>
       неофициальное торжество по поводу<br>
       нашей росписи.<br><br>
-    </p>
     <p class="hero-names">Оксана + Митя</p>
     <a href="#plan" class="hero-cta">
       Посмотреть план дня <span class="hero-cta-arrow">↓</span>
@@ -572,16 +571,6 @@
             }
             updateCountdown();
             setInterval(updateCountdown, 30000);
-
-            // Slider
-            const slides = document.querySelectorAll('.slide');
-            let current = 0;
-            setInterval( () => {
-                slides[current].classList.remove('active');
-                current = (current + 1) % slides.length;
-                slides[current].classList.add('active');
-            }
-            , 2000);
          
   // ── Scroll reveal ──
   const observer = new IntersectionObserver(entries => {
@@ -617,6 +606,15 @@
     a.href = url; a.download = 'oksana-mitya.ics'; a.click();
     URL.revokeObjectURL(url);
   }
+  // Slider
+    const slides = document.querySelectorAll('.slide');
+     let current = 0;
+      setInterval( () => {
+      slides[current].classList.remove('active');
+      current = (current + 1) % slides.length;
+      slides[current].classList.add('active');
+  }
+            , 2000);
 </script>
 </body>
 </html>
