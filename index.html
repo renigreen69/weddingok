@@ -463,6 +463,12 @@
 </head>
 <body>
 
+<audio id="bg-music" loop preload="auto">
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<button id="music-btn" type="button">♪</button>
+  
   <audio id="bg-music" autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
@@ -475,6 +481,21 @@ const btn = document.getElementById("music-btn");
 
 music.volume = 0.4;
 
+// Кнопка всегда стартует как "музыка выключена"
+btn.textContent = "♪";
+
+// Пытаемся запустить автоматически
+window.addEventListener("load", async () => {
+  try {
+    await music.play();
+    btn.textContent = "❚❚";
+  } catch (e) {
+    // Браузер запретил autoplay — это нормально
+    btn.textContent = "♪";
+    console.log("Autoplay blocked:", e);
+  }
+});
+
 btn.addEventListener("click", async () => {
   try {
     if (music.paused) {
@@ -486,6 +507,7 @@ btn.addEventListener("click", async () => {
     }
   } catch (e) {
     console.error("Музыка не запустилась:", e);
+    btn.textContent = "♪";
   }
 });
 </script>
