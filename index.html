@@ -44,6 +44,34 @@
       overflow: hidden;
     }
 
+    #music-hint{
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+
+  background: rgba(0,0,0,.45);
+  color: #fff;
+
+  padding: 8px 12px;
+  border-radius: 12px;
+
+  font-size: 12px;
+  letter-spacing: .04em;
+
+  backdrop-filter: blur(4px);
+
+  z-index: 9999;
+
+  opacity: 0;
+  transform: translateY(10px);
+  transition: .3s;
+}
+
+#music-hint.show{
+  opacity: 1;
+  transform: translateY(0);
+}
+    
     .hero-bg {
       position: absolute;
       inset: 0;
@@ -468,7 +496,8 @@
 </audio>
 
 <button id="music-btn">❚❚</button>
-
+<div id="music-hint">Нажмите для музыки</div>
+  
 <script>
 const music = document.getElementById("bg-music");
 const btn = document.getElementById("music-btn");
@@ -487,6 +516,33 @@ window.addEventListener("load", async () => {
     // Браузер запретил autoplay — это нормально
     btn.textContent = "♪";
     console.log("Autoplay blocked:", e);
+  }
+});
+
+  const hint = document.getElementById("music-hint");
+
+window.addEventListener("load", async () => {
+  try {
+    await music.play();
+  } catch {
+    hint.classList.add("show");
+  }
+});
+
+btn.addEventListener("click", async () => {
+  try {
+    if (music.paused) {
+      await music.play();
+      btn.textContent = "❚❚";
+    } else {
+      music.pause();
+      btn.textContent = "♪";
+    }
+
+    hint.classList.remove("show");
+
+  } catch(e){
+    console.error(e);
   }
 });
 
