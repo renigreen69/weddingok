@@ -70,14 +70,20 @@
     }
 
     .hero-content {
-      position: relative;
-      z-index: 2;
-      text-align: center;
-      color: #fff;
-      padding: 2rem 1.5rem;
-      max-width: 640px;
-      animation: fadeSlideUp 1.4s cubic-bezier(.22,.61,.36,1) 0.5s both;
-    }
+    position: absolute;
+  top: calc(env(safe-area-inset-top, 0px) + 3rem);
+  left: 50%;
+  transform: translateX(-50%);
+
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+
+  width: min(100% - 2rem, 640px);
+  padding: 0 1.5rem;
+
+  animation: fadeSlideUp 1.4s cubic-bezier(.22,.61,.36,1) 0.5s both;
+}
 
     @keyframes fadeSlideUp {
       from { opacity: 0; transform: translateY(32px); }
