@@ -51,8 +51,6 @@
       background-size: cover;
       background-position: center 15%;
       animation: heroZoom 14s ease-out forwards;
-      background-position: center;
-      z-index: 0;
     }
 
     @keyframes heroZoom {
@@ -69,16 +67,8 @@
     rgba(0, 0, 0, 0.42) 63%,
     rgba(0, 0, 0, 0.5) 100%
       );
-      z-index: 1;
     }
-    .hero-title {
-      font-family: var(--serif);
-      font-weight: 300;
-      font-size: clamp(2rem,6vw,5rem);
-      line-height: 1.08;
-      margin-bottom: 1.8rem;
-    }
-    
+
     .hero-content {
     position: absolute;
   top: calc(env(safe-area-inset-top, 0px) + 3rem);
@@ -109,6 +99,14 @@
       margin-bottom: 1.8rem;
     }
 
+    .hero-title {
+      font-family: var(--serif);
+      font-weight: 300;
+      font-size: clamp(2.2rem, 10.5vw, 5rem);
+      line-height: 1.08;
+      margin-bottom: 1.8rem;
+    }
+
     .hero-body {
       font-family: var(--sans);
       font-weight: 400;
@@ -122,7 +120,6 @@
     }
 
     .hero-names {
-      margin-top: clamp(2rem, 6vh, 5rem);
       font-family: var(--serif);
       font-style: italic;
       font-size: clamp(2.4rem, 5vw, 2.2rem);
@@ -452,9 +449,11 @@
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <p class="hero-date">06 · 06 · 2026 суббота</p>
-    <h1 class="hero-title">Дорогие друзья!</h1>
+    <h1 class="hero-title">Дорогие<br>друзья!</h1>
     <p class="hero-body">
-      Мы хотим пригласить вас на небольшое неофициальное торжество по поводу нашей росписи.<br><br>
+      Мы хотим пригласить вас на небольшое<br>
+      неофициальное торжество по поводу<br>
+      нашей росписи.<br><br>
     <p class="hero-names">Оксана + Митя = ♡</p>
     <a href="#plan" class="hero-cta">
       Посмотреть план дня <span class="hero-cta-arrow">↓</span>
@@ -482,81 +481,6 @@
     </div>
   </div>
 </section>
-
-  <style>
-  .hero {
-  position: relative;
-  min-height: 100svh;
-  overflow: hidden;
-}
-
-.hero-bg {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  z-index: 0;
-}
-
-    <style>
-
-/* главный контейнер */
-
-.hero-content {
-  position: relative;
-  z-index: 2;
-
-  min-height: 100svh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-
-  text-align: center;
-  color: #fff;
-
-  padding:
-    calc(env(safe-area-inset-top) + 3rem)
-    1.5rem
-    calc(env(safe-area-inset-bottom) + 2.5rem);
-}
-
-/* верхняя часть */
-
-.hero-date {
-  letter-spacing: .28em;
-  font-size: clamp(.9rem,2vw,1.1rem);
-}
-
-.hero-title {
-  margin: 1.6rem 0;
-  font-size: clamp(2rem,6vw,5rem);
-  line-height: .95;
-}
-
-.hero-body {
-  max-width: min(88vw,32rem);
-  margin: 0 auto;
-  font-size: clamp(1.1rem,3.5vw,1.6rem);
-  line-height: 1.45;
-}
-
-/* нижняя часть */
-
-.hero-names {
-  margin-top: clamp(2rem, 8vh, 6rem);
-  font-size: clamp(2.4rem, 5vw, 2.2rem);
-  font-style: italic;
-}
-
-.hero-cta {
-  display: inline-block;
-  margin-top: 1rem;
-  letter-spacing: .2em;
-  font-size: clamp(.9rem,2.5vw,1.1rem);
-  text-decoration: none;
-  color: white;
-}
 
 <!-- ═══ PHOTO SLIDER ═══ -->
 <section class="slider">
