@@ -22,27 +22,6 @@
     }
 
     html { scroll-behavior: smooth; }
-
-<audio id="bg-music" loop>
-  <source src="Sade - Paradise - Official - 1988 (audio-extractor.net).mp3" type="audio/mpeg">
-</audio>
-
-    <script>
-const music = document.getElementById("bg-music");
-const btn = document.getElementById("music-btn");
-
-btn.addEventListener("click", () => {
-  if (music.paused) {
-    music.play();
-    btn.textContent = "❚❚";
-  } else {
-    music.pause();
-    btn.textContent = "♪";
-  }
-});
-</script>
-
-<button id="music-btn">♪</button>
     
     body {
       font-family: var(--sans);
@@ -484,6 +463,27 @@ btn.addEventListener("click", () => {
 </head>
 <body>
 
+  <audio id="bg-music" loop>
+  <source src="Sade - Paradise - Official - 1988 (audio-extractor.net).mp3" type="audio/mpeg">
+</audio>
+
+    <script>
+const music = document.getElementById("bg-music");
+const btn = document.getElementById("music-btn");
+
+btn.addEventListener("click", () => {
+  if (music.paused) {
+    music.play();
+    btn.textContent = "❚❚";
+  } else {
+    music.pause();
+    btn.textContent = "♪";
+  }
+});
+</script>
+
+<button id="music-btn">♪</button>
+  
 <!-- ═══ HERO ═══ -->
 <section class="hero">
   <div class="hero-bg"></div>
